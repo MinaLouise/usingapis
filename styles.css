@@ -1,0 +1,26 @@
+* {
+    margin: 10px 0;
+    padding:0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.shell{
+    background-color: white;
+    
+}
+
+.H-position{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: url(dog.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+    background-attachment: fixed;
+}
+
+.header{
+    padding: 70px 70px;
+    
+ }
