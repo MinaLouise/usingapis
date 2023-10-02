@@ -11,10 +11,10 @@
 }
 
 .H-position{
-    position: sticky;
     position: -webkit-sticky;
+    position: sticky;
     top: 0;
-    background: url(dog.png);
+    background: url();
     background-repeat: no-repeat;
     background-size: 100% 100%;    
     background-attachment: fixed;
