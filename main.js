@@ -1,33 +1,33 @@
-// Define the URL of the API
-// const apiUrl = "https://dictionaryapi.com/api/v3/references/spanish/json/test?key=86cfc412-5fa0-4101-a013-9d82512e970d";
-
-// fetch(apiUrl)
-//     .then((response) => response.json())
-//     .then((data)=>{
-//         const button = document.getElementsByClassName("enter")
-
-//         button.addEventListener("click", function() {
-//             document.querySelector("spanish").innerHTML = "BCCA"
-           
-//         })
-
-//     })
-//     .catch(error =>{
-//         console.log("Error")
-//     })
+const url = "https://api.thecatapi.com/v1/images/search";
+const section = document.querySelector(".container");
+const button = document.querySelector(".btn");
 
 
-// button.addEventListener("click", () =>{
-//     document.getElementsByClassName("spanish")
-   
-// });
+button.addEventListener("click", getRandomCats);
 
-let btn = document.querySelector("button");
 
-btn.addEventListener("click", function() {
-   const spanish = document.getElementsByClassName('spanish')
-   console.log('BCCA');
+randomCatPhoto = (json) => {
+  let photo = json[0].url;
+  section.classList.add("cats");
 
-   
-})
-   
+
+  let image = document.createElement("img");
+  image.src = photo;
+  image.classList.add("random_cats");
+  image.alt = photo;
+  section.appendChild(image);
+};
+
+
+async function getRandomCats() {
+  section.innerHTML = "";
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    console.log("JSON:", json);
+    return randomCatPhoto(json);
+  } catch (e) {
+    console.log("This is an error");
+    console.log(e);
+  }
+}
